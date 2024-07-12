@@ -1,3 +1,3 @@
 def add(num):
-  if not num:
+  if  num == "0" or num == " ":
     return 0
