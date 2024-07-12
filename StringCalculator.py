@@ -16,4 +16,4 @@ def split(num: str, delimiter: str) -> list:
 def sum__num(num_list: list) -> int:
     def valid(num):
         return num.isdigit() and int(num) <= 1000
-    return sum(int(num) for num in num_Input if is_valid(num))
+    return sum(int(num) for num in num_Input if valid(num))
