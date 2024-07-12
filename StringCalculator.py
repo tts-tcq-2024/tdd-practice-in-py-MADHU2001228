@@ -3,5 +3,5 @@ def add(num):
     return 0
   a = num.split(',')
   
-  sum = sum( int(result) for result in a)
-  return sum
+  Addition = sum( int(result) for result in a)
+  return Addition
