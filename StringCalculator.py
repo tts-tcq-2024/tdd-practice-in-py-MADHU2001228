@@ -13,7 +13,7 @@ def custom_delimiter(num: str) -> tuple:
 def split(num: str, delimiter: str) -> list:
     return num.replace('\n', delimiter).split(delimiter) 
  
-def sum__num(num_list: list) -> int:
+def sum_num(num_Input: list) -> int:
     def valid(num):
         return num.isdigit() and int(num) <= 1000
     return sum(int(num) for num in num_Input if valid(num))
