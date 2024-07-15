@@ -1,19 +1,19 @@
-def add(num: str) -> int:
-    if num.startswith('//'):
-        delimiter, num = custom_delimiter(num)
-    else:
-        delimiter = ','
-    num_Input = split(num, delimiter)
-    return sum_num(num_Input) 
+def parse_input(input):
+    if input.startswith('//'):
+        delimiter = input[2]
+        return input[4:], delimiter
+    return input, ','
  
-def custom_delimiter(num: str) -> tuple:
-    delimiter, num = num[2:].split('\n', 1)
-    return delimiter, num
-  
-def split(num: str, delimiter: str) -> list:
-    return num.replace('\n', delimiter).split(delimiter) 
+def split_and_convert(input, delimiter):
+    return [int(num) for num in input.replace('\n', delimiter).split(delimiter)]
  
-def sum_num(num_Input: list) -> int:
-    def valid(num):
-        return num.isdigit() and int(num) <= 1000
-    return sum(int(num) for num in num_Input if valid(num))
+def filter_numbers(numbers):
+    return [num for num in numbers if num <= 1000]
+ 
+def add(input):
+    if not input:
+        return 0
+    parsed_input, delimiter = parse_input(input)
+    numbers = split_and_convert(parsed_input, delimiter)
+    filter_numbers = filter_numbers(numbers)
+    return sum(filtered_numbers)
