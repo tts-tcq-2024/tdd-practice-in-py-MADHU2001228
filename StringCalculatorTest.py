@@ -15,7 +15,7 @@ class TestStringCalculator(unittest.TestCase):
                 self.assertEqual(add("1,1001"), 1)
                 
         def test_expectSumWithCustomDelimiter(self):
-                self.assertEqual(add("//;\n1,2"), 3)
+                self.assertEqual(add("//;\n1;2"), 3)
                 
         def test_expectSumWithNewlineDelimiter(self):
                 self.assertEqual(add("1\n2,3"),6);
