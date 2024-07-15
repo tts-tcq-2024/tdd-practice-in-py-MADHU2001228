@@ -15,5 +15,5 @@ def add(input):
         return 0
     parsed_input, delimiter = parse_input(input)
     numbers = split_and_convert(parsed_input, delimiter)
-    filter_numbers = filter_numbers(numbers)
+    filtered_numbers = filter_numbers(numbers)
     return sum(filtered_numbers)
